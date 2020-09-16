@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "recruit",
+    "password": "12341234",
+    "database": "test",
+    "host": "maindb.cexrfznwa2iv.ap-northeast-2.rds.amazonaws.com",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "recruit",
+    "password": "12341234",
+    "database": "test",
+    "host": "maindb.cexrfznwa2iv.ap-northeast-2.rds.amazonaws.com",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "recruit",
+    "password": "12341234",
+    "database": "test",
+    "host": "maindb.cexrfznwa2iv.ap-northeast-2.rds.amazonaws.com",
+    "dialect": "postgres"
+  }
+}
