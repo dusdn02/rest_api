@@ -1,0 +1,8 @@
+# CHANGELOG
+
+## 2020-09-15
+
+- .gitignore 파일 추가
+- src 폴더 삭제
+- config 폴더 삭제
+- config/wiston.js -> config/winston.js 오타 수정
