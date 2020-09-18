@@ -31,33 +31,33 @@ app.use((req, res, next) => {
 })
 
 if (process.env.NODE_ENV === 'production') {
-  const sentry = require('@sentry/node')
-  sentry.init({ dsn: process.env.SENTRY_DSN })
+  // const sentry = require('@sentry/node')
+  // sentry.init({ dsn: process.env.SENTRY_DSN })
 
-  app.use(sentry.Handlers.errorHandler())
+  // app.use(sentry.Handlers.errorHandler())
 
-  const { IncomingWebhook } = require('@slack/client')
-  const webhook = new IncomingWebhook(process.env.SLACK_WEBHOOK)
-  webhook.send({
-    'attachments': [
-      {
-        'color': '#ff0000',
-        'text': '에러 발생!!! 출근하라!!!',
-        'fields': [
-          {
-            'title': err.message,
-            'value': err.stack,
-            'short': false
-          }
-        ],
-        'ts': moment().unix()
-      }
-    ]
-  }, (err, res) => {
-    if (err) {
-      sentry.captureException(err)
-    }
-  })
+  // const { IncomingWebhook } = require('@slack/client')
+  // const webhook = new IncomingWebhook(process.env.SLACK_WEBHOOK)
+  // webhook.send({
+  //   'attachments': [
+  //     {
+  //       'color': '#ff0000',
+  //       'text': '에러 발생!!! 출근하라!!!',
+  //       'fields': [
+  //         {
+  //           'title': err.message,
+  //           'value': err.stack,
+  //           'short': false
+  //         }
+  //       ],
+  //       'ts': moment().unix()
+  //     }
+  //   ]
+  // }, (err, res) => {
+  //   if (err) {
+  //     sentry.captureException(err)
+  //   }
+  //   })
 }
 app.use((err, req, res, next) => {
   let apiError = err
