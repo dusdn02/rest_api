@@ -1,7 +1,7 @@
 'use strict'
 
 import bcrypt from 'bcrypt'
-import{
+import {
   uuid
 } from '../utils/uuid'
 import UserCache from '../caches/user.cache'
@@ -12,8 +12,8 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       unique: true,
       type: 'BINARY(16)',
-      defaultValue: () => Buffer(uuid(), 'hex'),
-      get: function() {
+      defaultValue: () => new Buffer(uuid(), 'hex'),
+      get: function () {
         return Buffer.from(this.getDataValue('uuid'))
           .toString('hex')
       }
@@ -34,7 +34,7 @@ module.exports = (sequelize, DataTypes) => {
     tableName: 'users',
     timestamps: true
   })
-  User.associate = function(models) {
+  User.associate = function (models) {
     // associations
   }
   // hooks
@@ -51,7 +51,7 @@ module.exports = (sequelize, DataTypes) => {
   })
 
   // print
-  User.prototype.toWeb = function() {
+  User.prototype.toWeb = function () {
     const values = Object.assign({}, this.get())
     delete values.id
     delete values.password

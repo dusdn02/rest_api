@@ -3,6 +3,8 @@ import UserCache from '../caches/user.cache'
 import UserWrapper from '../wrappers/user.wrapper'
 
 class UserRepository {
+  userCache: UserCache
+  static find: any
   constructor() {
     this.userCache = new UserCache()
   }
@@ -19,13 +21,13 @@ class UserRepository {
   }
 
   async find(uuid) {
-    const user = await this.userCache.find(uuid)
+    let user = await this.userCache.find(uuid)
 
     if (!user) {
       // Cache 가 존재하지 않으면 DB 에서 받아옴 
       user = await models.User.findOne({
         where: {
-          uuid: Buffer(uuid, 'hex')
+          uuid: new Buffer(uuid, 'hex')
         }
       })
     }

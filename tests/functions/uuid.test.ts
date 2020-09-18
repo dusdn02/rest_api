@@ -4,7 +4,9 @@ import {
 } from '../../utils/uuid'
 import models from '../../models'
 
-afterAll(() => models.sequelize.close())
+afterAll(() => {
+  models.sequelize.close()
+})
 
 test('ordered UUID 가 출력되어야 합니다.', () => {
   const orderedUuid = uuid()

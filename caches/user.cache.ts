@@ -1,4 +1,4 @@
-  
+
 const redis = require('redis')
 const bluebird = require('bluebird')
 import UserRepo from '../repositories/user.repository'
