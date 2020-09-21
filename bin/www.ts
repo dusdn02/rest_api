@@ -4,7 +4,7 @@ require('dotenv').config();
  * Module dependencies.
  */
 
-var app = require('../app');
+const app = require('../app');
 var debug = require('debug')('restapi:server');
 var http = require('http');
 
