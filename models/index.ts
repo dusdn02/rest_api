@@ -11,7 +11,7 @@ let sequelize = {} as any
 sequelize = new Sequelize(config.database, config.username, config.password, config)
 
 fs.readdirSync(__dirname)
-  .filter(file => (file.indexOf('.') !== 0) && (file !== basename) && (file.slice(-9) === '.model.ts'))
+  .filter(file => (file.indexOf('.') !== 0) && (file !== basename) && (file.slice(-9) === '.model.js'))
   .forEach(file => {
     const model = require(path.join(__dirname, file))(sequelize, Sequelize)
     models[model.name] = model

@@ -22,7 +22,7 @@ app.use(
 )
 app.use(cookieParser())
 
-app.use(jwtMiddleware)
+// app.use(jwtMiddleware)
 
 app.use('/v1', v1Route)
 
