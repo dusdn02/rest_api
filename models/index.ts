@@ -1,8 +1,8 @@
-import fs from 'fs'
-import path from 'path'
+import * as fs from 'fs'
+import * as path from 'path'
 
 const Sequelize = require('sequelize')
-const config = require(__dirname + '/../configs/sequelize.js')[process.env.NODE_ENV]
+const config = require(__dirname + '/../configs/sequelize.ts')[process.env.NODE_ENV]
 const basename = path.basename(__filename)
 
 const models = {}
@@ -15,7 +15,7 @@ if (config.use_env_variable) {
 }
 
 fs.readdirSync(__dirname)
-  .filter(file => (file.indexOf('.') !== 0) && (file !== basename) && (file.slice(-9) === '.model.js'))
+  .filter(file => (file.indexOf('.') !== 0) && (file !== basename) && (file.slice(-9) === '.model.ts'))
   .forEach(file => {
     const model = require(path.join(__dirname, file))(sequelize, Sequelize)
     models[model.name] = model
