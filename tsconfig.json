@@ -1,9 +1,9 @@
 {
-    "compilerOptions": {
-        "allowJs": true,
-        "target": "es5"
-    },
-    "include": [
-        ".restapi/**/*"
-    ]
+	"compilerOptions": {
+		"allowJs": true,
+		"target": "es5",
+		"outDir": "build/main"
+	},
+	"include": ["**/*.ts"],
+	"exclude": ["node_modules/**"]
 }
