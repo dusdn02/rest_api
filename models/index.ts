@@ -5,8 +5,8 @@ const Sequelize = require('sequelize')
 const config = require(__dirname + '/../configs/sequelize.ts')[process.env.NODE_ENV]
 const basename = path.basename(__filename)
 
-const models = {}
-let sequelize
+const models = {} as any
+let sequelize = {} as any
 
 if (config.use_env_variable) {
   sequelize = new Sequelize(process.env[config.use_env_variable], config)
