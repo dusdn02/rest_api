@@ -2,7 +2,8 @@
 	"compilerOptions": {
 		"allowJs": true,
 		"target": "es5",
-		"outDir": "build/main"
+		"outDir": "build/main",
+		"esModuleInterop": true
 	},
 	"include": [
 		"**/*.ts"
