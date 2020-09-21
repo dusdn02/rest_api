@@ -1,16 +1,16 @@
-'use strict'
+"use strict";
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.addColumn('users', 'uuid', {
+    return queryInterface.addColumn("users", "uuid", {
       allowNull: false,
       unique: true,
-      type: 'bytea',
-      after: 'id'
-    })
+      type: "bytea",
+      after: "id",
+    });
   },
 
   down: (queryInterface, Sequelize) => {
-    return queryInterface.removeColumn('users', 'uuid')
-  }
-}
+    return queryInterface.removeColumn("users", "uuid");
+  },
+};
