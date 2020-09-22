@@ -1,12 +1,12 @@
-import Wrapper from ".";
+import Wrapper from '.'
 
 class UserWrapper extends Wrapper {
-  toWeb() {
-    const values = Object.assign({}, this);
-    delete values.password;
+  toWeb () {
+    const values = Object.assign({}, this)
+    delete values.password
 
-    return values;
+    return values
   }
 }
 
-export default UserWrapper;
+export default UserWrapper

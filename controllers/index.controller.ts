@@ -1,6 +1,6 @@
 const index = (req, res, next) =>
   res.json({
-    message: "Hello Aha!",
-  });
+    message: 'Hello Aha!'
+  })
 
-export { index };
+export { index }

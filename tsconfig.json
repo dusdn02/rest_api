@@ -1,14 +1,10 @@
 {
-	"compilerOptions": {
-		"allowJs": true,
-		"target": "es5",
-		"outDir": "build/main",
-		"esModuleInterop": true
-	},
-	"include": [
-		"**/*.ts"
-	],
-	"exclude": [
-		"node_modules/**"
-	]
+  "compilerOptions": {
+    "allowJs": true,
+    "target": "es5",
+    "outDir": "build/main",
+    "esModuleInterop": true
+  },
+  "include": ["**/*.ts"],
+  "exclude": ["node_modules/**"]
 }

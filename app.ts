@@ -1,5 +1,3 @@
-require('dotenv').config()
-
 import createError from 'http-errors'
 import express from 'express'
 import cookieParser from 'cookie-parser'
@@ -8,8 +6,9 @@ import moment from 'moment'
 import response from './utils/response'
 import v1Route from './routes/v1'
 
-import jwtMiddleware from './middlewares/jwt.middleware'
 import { logger, stream } from './configs/winston'
+
+require('dotenv').config()
 
 const app = express()
 

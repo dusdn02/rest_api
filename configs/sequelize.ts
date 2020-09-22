@@ -1,32 +1,32 @@
-require("dotenv").config();
+require('dotenv').config()
 
-if (process.env.NODE_ENV !== "production") {
-  require("@babel/register");
+if (process.env.NODE_ENV !== 'production') {
+  require('@babel/register')
 }
 
 const baseDbSetting = {
   username: process.env.DB_USER,
   password: process.env.DB_PW,
   host: process.env.DB_HOST,
-  timezone: "+09:00",
-  dialect: "postgres",
+  timezone: '+09:00',
+  dialect: 'postgres',
   pool: {
     max: 100,
     min: 0,
-    idle: 10000,
+    idle: 10000
   },
   define: {
-    charset: "utf8mb4",
-    collate: "utf8mb4_unicode_ci",
-    timestamps: true,
-  },
-};
+    charset: 'utf8mb4',
+    collate: 'utf8mb4_unicode_ci',
+    timestamps: true
+  }
+}
 
 module.exports = {
   production: Object.assign(
     {
       database: process.env.DB_NAME,
-      logging: false,
+      logging: false
     },
     baseDbSetting
   ),
@@ -34,7 +34,7 @@ module.exports = {
   development: Object.assign(
     {
       database: process.env.DB_DEV,
-      logging: true,
+      logging: true
     },
     baseDbSetting
   ),
@@ -42,8 +42,8 @@ module.exports = {
   test: Object.assign(
     {
       database: process.env.DB_TEST,
-      logging: false,
+      logging: false
     },
     baseDbSetting
-  ),
-};
+  )
+}
