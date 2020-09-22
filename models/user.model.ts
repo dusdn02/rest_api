@@ -1,43 +1,5 @@
 'use strict'
 
-<<<<<<< HEAD
-import {
-  uuid
-} from '../utils/uuid'
-
-module.exports = (sequelize, DataTypes) => {
-  const User = sequelize.define('User', {
-    uuid: {
-      allowNull: false,
-      unique: true,
-      type: 'text',
-      defaultValue: () => new Buffer(uuid(), 'hex'),
-      get: function () {
-        return Buffer.from(this.getDataValue('uuid')).toString('hex')
-      }
-    },
-    email: {
-      allowNull: false,
-      unique: true,
-      type: DataTypes.STRING,
-      validate: {
-        isEmail: true,
-      },
-    },
-    password: {
-      allowNull: false,
-      type: DataTypes.STRING,
-    }
-  }, {
-    tableName: 'users',
-    timestamps: true,
-  })
-  User.associate = function (models) {
-
-  }
-  return User
-}
-=======
 import bcrypt from 'bcrypt'
 import { uuid } from '../utils/uuid'
 import UserCache from '../caches/user.cache'
@@ -99,4 +61,3 @@ module.exports = (sequelize, DataTypes) => {
   }
   return User
 }
->>>>>>> 46b4a754e74cbe95dea570a4a6fe187e269439f7

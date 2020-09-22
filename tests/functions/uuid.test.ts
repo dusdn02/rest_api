@@ -1,16 +1,4 @@
 import randomString from 'random-string'
-<<<<<<< HEAD
-import {
-  uuid
-} from '../../utils/uuid'
-import {
-  models
-} from '../../models'
-
-afterAll(() => models.sequelize.close())
-
-
-=======
 import { uuid } from '../../utils/uuid'
 import models from '../../models'
 
@@ -37,4 +25,3 @@ test('사용자를 생성하면 uuid 가 정상 생성되어야 합니다', asyn
   // eslint-disable-next-line no-undef
   expect(user.uuid).toMatch(/\b4[0-9A-Fa-f]{31}\b/g)
 })
->>>>>>> 46b4a754e74cbe95dea570a4a6fe187e269439f7
