@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
     "presets": [
         [
             "@babel/preset-env",{
@@ -9,3 +10,16 @@
         ]
     ]
 }
+=======
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "targets": {
+          "node": "current"
+        }
+      }
+    ]
+  ]
+}
+>>>>>>> 46b4a754e74cbe95dea570a4a6fe187e269439f7

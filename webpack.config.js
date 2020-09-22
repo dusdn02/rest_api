@@ -1,4 +1,5 @@
 module.exports = {
+<<<<<<< HEAD
   entry: './src/index.ts',
   output: {
     filename: './dist/bundle.js'
@@ -25,4 +26,25 @@ module.exports = {
   }
 
   // 다른 옵션들...
+=======
+  entry: '.src/indexe.ts',
+  output: {
+    filename: './dist/bundle.js'
+  },
+  // eslint-disable-next-line no-undef
+  dev: Source - Map,
+
+  resolve: {
+    // eslint-disable-next-line no-undef
+    extenstions: ['', '.web.js', web.js, '.ts', 'tsx', 'js']
+  },
+
+  module: {
+    rules: [
+      { test: /\.tsx?$/, loader: 'awsome-typescript-loader' },
+
+      { test: /\.js$/, loader: 'source-map-loader' }
+    ]
+  }
+>>>>>>> 46b4a754e74cbe95dea570a4a6fe187e269439f7
 }

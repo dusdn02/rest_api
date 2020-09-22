@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 
+=======
+build
+>>>>>>> 46b4a754e74cbe95dea570a4a6fe187e269439f7
 config/
 
 # Logs
@@ -131,3 +135,8 @@ dist
 
 # .nfs files are created when an open file is removed but is still being accessed
 .nfs*
+<<<<<<< HEAD
+=======
+
+.vscode
+>>>>>>> 46b4a754e74cbe95dea570a4a6fe187e269439f7

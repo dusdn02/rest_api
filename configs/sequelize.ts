@@ -23,6 +23,7 @@ const baseDbSetting = {
 }
 
 module.exports = {
+<<<<<<< HEAD
   production: Object.assign({
     database: process.env.DB_NAME,
     logging: false
@@ -37,4 +38,29 @@ module.exports = {
     database: process.env.DB_TEST,
     logging: false
   }, baseDbSetting)
+=======
+  production: Object.assign(
+    {
+      database: process.env.DB_NAME,
+      logging: false
+    },
+    baseDbSetting
+  ),
+
+  development: Object.assign(
+    {
+      database: process.env.DB_DEV,
+      logging: true
+    },
+    baseDbSetting
+  ),
+
+  test: Object.assign(
+    {
+      database: process.env.DB_TEST,
+      logging: false
+    },
+    baseDbSetting
+  )
+>>>>>>> 46b4a754e74cbe95dea570a4a6fe187e269439f7
 }

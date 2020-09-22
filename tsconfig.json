@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "include": [],
   "exclude": [],
   "compilerOptions": {
@@ -62,3 +63,14 @@
     "forceConsistentCasingInFileNames": true /* Disallow inconsistently-cased references to the same file. */
   }
 }
+=======
+  "compilerOptions": {
+    "allowJs": true,
+    "target": "es5",
+    "outDir": "build/main",
+    "esModuleInterop": true
+  },
+  "include": ["**/*.ts"],
+  "exclude": ["node_modules/**"]
+}
+>>>>>>> 46b4a754e74cbe95dea570a4a6fe187e269439f7

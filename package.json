@@ -3,35 +3,78 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+<<<<<<< HEAD
     "start": "nodemon ./bin/www --exec babel-node --presets @babel/preset-env",
     "test": "NODE_ENV=test npm run migrate:reset && NODE_ENV=test npm run migrate && NODE_ENV=test ./node_modules/.bin/jest tests --coverage",
+=======
+    "start": "run-s build && node build/main/bin/www",
+    "test": "NODE_ENV=test npm run migrate:reset && NODE_ENV=test npm run migrate && NODE_ENV=test ./node_modules/.bin/ts-jest tests",
+    "dev": "tsc-watch --onSuccess \" node build/main/index.js\" ",
+    "build": "run-s clean && tsc -p tsconfig.json",
+    "clean": "trash build",
+>>>>>>> 46b4a754e74cbe95dea570a4a6fe187e269439f7
     "migrate": "sequelize db:migrate",
     "migrate:reset": "sequelize db:migrate:undo:all"
   },
   "dependencies": {
     "@babel/polyfill": "^7.2.5",
+<<<<<<< HEAD
     "@types/lodash": "^4.14.161",
     "awesome-typescript-loader": "^5.2.1",
+=======
+    "@sentry/node": "^5.23.0",
+    "@slack/client": "^5.0.2",
+    "@types/jest": "^26.0.14",
+    "@types/lodash": "^4.14.161",
+    "awesome-typescript-loader": "^5.2.1",
+    "bcrypt": "^5.0.0",
+    "bluebird": "^3.7.2",
+    "connect-redis": "^5.0.0",
+>>>>>>> 46b4a754e74cbe95dea570a4a6fe187e269439f7
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
     "dotenv": "^6.2.0",
     "express": "~4.16.0",
     "http-errors": "~1.6.2",
+<<<<<<< HEAD
     "jest": "^26.4.2",
     "moment": "^2.27.0",
     "morgan": "~1.9.0",
+=======
+    "http-status": "^1.4.2",
+    "jest": "^26.4.2",
+    "jsonwebtoken": "^8.5.1",
+    "moment": "^2.27.0",
+    "morgan": "^1.9.1",
+>>>>>>> 46b4a754e74cbe95dea570a4a6fe187e269439f7
     "mysql2": "^2.1.0",
     "pg": "^8.3.3",
     "pg-hstore": "^2.3.3",
     "random-string": "^0.2.0",
+<<<<<<< HEAD
     "sequelize": "^4.44.4",
     "uuid4": "^2.0.2"
+=======
+    "redis": "^3.0.2",
+    "run": "^1.4.0",
+    "sequelize": "^4.44.4",
+    "source-map-loader": "^1.1.0",
+    "trash": "^6.1.1",
+    "typescript": "^4.0.2",
+    "uuid4": "^2.0.2",
+    "winston": "^3.3.3"
+>>>>>>> 46b4a754e74cbe95dea570a4a6fe187e269439f7
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
     "@babel/core": "^7.11.6",
     "@babel/node": "^7.2.2",
     "@babel/preset-env": "^7.11.5",
+<<<<<<< HEAD
+=======
+    "@typescript-eslint/eslint-plugin": "^4.1.1",
+    "@typescript-eslint/parser": "^4.1.1",
+>>>>>>> 46b4a754e74cbe95dea570a4a6fe187e269439f7
     "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "^26.3.0",
     "eslint": "^7.9.0",
@@ -40,7 +83,15 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1",
+<<<<<<< HEAD
     "regenerator-runtime": "^0.13.7",
     "typescript": "^4.0.2"
+=======
+    "npm-run-all": "^4.1.5",
+    "regenerator-runtime": "^0.13.7",
+    "supertest": "^4.0.2",
+    "trash-cli": "^3.1.0",
+    "ts-jest": "^26.4.0"
+>>>>>>> 46b4a754e74cbe95dea570a4a6fe187e269439f7
   }
 }
