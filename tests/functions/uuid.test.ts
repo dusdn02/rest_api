@@ -9,4 +9,3 @@ import {
 afterAll(() => models.sequelize.close())
 
 
-  

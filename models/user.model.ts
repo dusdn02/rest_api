@@ -1,6 +1,6 @@
 'use strict'
 
-import{
+import {
   uuid
 } from '../utils/uuid'
 
@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       unique: true,
       type: 'text',
-      defaultValue: () => Buffer(uuid(), 'hex'),
+      defaultValue: () => new Buffer(uuid(), 'hex'),
       get: function () {
         return Buffer.from(this.getDataValue('uuid')).toString('hex')
       }
@@ -31,7 +31,7 @@ module.exports = (sequelize, DataTypes) => {
     tableName: 'users',
     timestamps: true,
   })
-  User.associate = function(models){
+  User.associate = function (models) {
 
   }
   return User
