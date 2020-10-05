@@ -5,8 +5,8 @@ import morgan from 'morgan'
 import moment from 'moment'
 import response from './utils/response'
 import v1Route from './routes/v1'
-
 import { logger, stream } from './configs/winston'
+import kafka from './kafka/send'
 
 require('dotenv').config()
 
@@ -25,6 +25,8 @@ app.use(cookieParser())
 
 app.use('/v1', v1Route)
 
+app.use('/kafka', kafka)
+console.log('app에서 kafka 실행')
 app.use((req, res, next) => {
   next(createError(500))
 })
