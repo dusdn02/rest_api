@@ -19,7 +19,7 @@ const send = async (req, res, next) => {
       messages: 'test-messages'
     })
 
-    return
+    return res.json(producer)
   } catch (e) {
     next(e)
   }
