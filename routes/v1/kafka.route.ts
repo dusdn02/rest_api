@@ -1,5 +1,5 @@
 import express from 'express'
-import { send } from '../../controllers/v1/auth.controller'
+import { send } from '../../controllers/v1/kafka.controller'
 
 const router = express.Router()
 
