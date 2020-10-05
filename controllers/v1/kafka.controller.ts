@@ -1,6 +1,5 @@
 // eslint-disable-next-line no-unused-vars
 const { kafkajs, Kafka } = require('kafkajs')
-const schedule = require('node-schedule')
 
 const send = async (req, res, next) => {
   var kafka = new Kafka({
@@ -14,14 +13,9 @@ const send = async (req, res, next) => {
 
   console.log('send함수')
 
-  var rule = new schedule.RecurrenceRule()
-  rule.second = [0, 30]
-
-  schedule.scheduleJob(rule, async function () {
-    await req.this.producer.send({
-      topic: 'test.lora',
-      messages: 'test-messages'
-    })
+  await req.this.producer.send({
+    topic: 'test.lora',
+    messages: 'test-messages'
   })
 }
 
