@@ -1,4 +1,4 @@
-const index = (req, res, next) =>
+const index = (_req: any, res: any, _next: any) =>
   res.json({
     message: 'Hello Aha!'
   })

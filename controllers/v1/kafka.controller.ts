@@ -1,4 +1,3 @@
-// eslint-disable-next-line no-unused-vars
 import response from '../../utils/response'
 const { Kafka } = require('kafkajs')
 
@@ -9,7 +8,7 @@ var kafka = new Kafka({
 
 const producer = kafka.producer()
 
-const send = async (req, res, next) => {
+const send = async (req: any, res: any, next: any) => {
   try {
     await producer.connect()
 

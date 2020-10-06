@@ -1,6 +1,6 @@
 const httpStatus = require('http-status')
 
-export default (res, data = {}, code = httpStatus.OK) => {
+export default (res: any, data = {}, code = httpStatus.OK) => {
   let result = {
     success: true
   }
