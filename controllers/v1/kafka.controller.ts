@@ -1,5 +1,6 @@
+import { Kafka, EachMessagePayload } from 'kafkajs'
 import response from '../../utils/response'
-const { Kafka } = require('kafkajs')
+const moment = require('moment')
 
 var kafka = new Kafka({
   clientId: process.env.CLIENT_ID,
@@ -7,27 +8,63 @@ var kafka = new Kafka({
 })
 
 const producer = kafka.producer()
+const consumer = kafka.consumer({ groupId: process.env.CLIENT_ID })
 
 const send = async (req: any, res: any, next: any) => {
   try {
     await producer.connect()
 
-    console.log('send함수')
+    var temp: any[] = []
+
+    console.log('kafkacontroller send 실행')
 
     await producer.send({
       topic: 'test.lora',
       messages: [{
         key: null,
-        value: 'test-messages'
+        value: JSON.stringify({
+          timestamp: moment().format('YYYY-MM-DD hh:mm:ss'),
+          value: 'test-messages'
+        })
       }]
     })
 
-    response(res)
+    response(res, temp)
   } catch (e) {
-    console.log(e)
+    next(e)
+  }
+}
+consum()
+var temp: any[] = []
+async function consum () {
+  await consumer.connect()
+  await consumer.subscribe({
+    topic: 'test.lora'
+  })
+
+  console.log('kafkacontroller messages 실행')
+
+  await consumer.run({
+    eachMessage: async ({ message }: EachMessagePayload) => {
+      if (message.value) {
+        var data = JSON.stringify(message.value.toString())
+        console.log(data)
+        temp.push(data)
+      } else {
+        temp.pop()
+      }
+    }
+  })
+}
+
+const messages = async (req: any, res: any, next: any) => {
+  try {
+    // console.log('temp에 값이' + temp)
+
+    response(res, temp)
+  } catch (e) {
     next(e)
   }
 }
 
-// eslint-disable-next-line camelcase
-export { send }
+export { send, messages }

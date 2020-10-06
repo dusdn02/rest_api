@@ -16,23 +16,11 @@
     "listEmittedFiles": false,
     "listFiles": false,
     "pretty": true,
-    "lib": [
-      "es2020"
-    ],
-    "types": [
-      "node"
-    ],
-    "typeRoots": [
-      "node_modules/@types",
-      "src/@types"
-    ]
+    "lib": ["es2020"],
+    "types": ["node"],
+    "typeRoots": ["node_modules/@types", "@types"]
   },
-  "include": [
-    "**/*.ts"
-  ],
-  "exclude": [
-    "build/**",
-    "node_modules/**"
-  ],
+  "include": ["**/*.ts"],
+  "exclude": ["build/**", "node_modules/**"],
   "compileOnSave": false
 }
