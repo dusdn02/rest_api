@@ -50,8 +50,6 @@ async function consum () {
         var data = JSON.stringify(message.value.toString())
         console.log(data)
         temp.push(data)
-      } else {
-        temp.pop()
       }
     }
   })
@@ -62,6 +60,7 @@ const messages = async (req: any, res: any, next: any) => {
     // console.log('temp에 값이' + temp)
 
     response(res, temp)
+    temp.pop()
   } catch (e) {
     next(e)
   }
