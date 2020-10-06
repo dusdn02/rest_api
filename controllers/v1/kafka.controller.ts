@@ -60,7 +60,9 @@ const messages = async (req: any, res: any, next: any) => {
     // console.log('temp에 값이' + temp)
 
     response(res, temp)
-    temp.pop()
+    temp.forEach(function (value) {
+      temp.pop()
+    })
   } catch (e) {
     next(e)
   }
