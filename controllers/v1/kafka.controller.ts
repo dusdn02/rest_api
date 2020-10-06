@@ -1,26 +1,31 @@
 // eslint-disable-next-line no-unused-vars
-const { kafkajs, Kafka } = require('kafkajs')
+import response from '../../utils/response'
+const { Kafka } = require('kafkajs')
+
+var kafka = new Kafka({
+  clientId: process.env.CLIENT_ID,
+  brokers: ['15.165.31.68:9092']
+})
+
+const producer = kafka.producer()
 
 const send = async (req, res, next) => {
   try {
-    var kafka = new Kafka({
-      clientId: process.env.CLIENT_ID,
-      brokers: ['15.165.31.68:9092']
-    })
-
-    const producer = kafka.producer()
-
     await producer.connect()
 
     console.log('send함수')
 
-    await req.this.producer.send({
+    await producer.send({
       topic: 'test.lora',
-      messages: 'test-messages'
+      messages: [{
+        key: null,
+        value: 'test-messages'
+      }]
     })
 
-    return res.json(producer)
+    response(res)
   } catch (e) {
+    console.log(e)
     next(e)
   }
 }
