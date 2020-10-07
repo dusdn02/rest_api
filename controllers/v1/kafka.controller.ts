@@ -58,11 +58,12 @@ async function consum () {
 const messages = async (req: any, res: any, next: any) => {
   try {
     // console.log('temp에 값이' + temp)
-
+    console.log('temp길이:' + temp.length)
+    var tmplength = temp.length
     response(res, temp)
-    temp.forEach(function (value) {
+    for (var i = 0; i < tmplength; i++) {
       temp.pop()
-    })
+    }
   } catch (e) {
     next(e)
   }
